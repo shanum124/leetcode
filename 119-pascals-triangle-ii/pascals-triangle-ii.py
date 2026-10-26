@@ -1,7 +1,10 @@
 class Solution:
-    def getRow(self, rowIndex: int) -> list[int]:
-        # res = [1]
-        row = [comb(rowIndex, j) for j in range(rowIndex + 1)]
+    def getRow(self, i: int) -> list[int]:
+        row = [1]
+        value = 1
+        for j in range(1, i + 1):
+            value = value * (i - j + 1) // j
+            row.append(value)
         return row
 
 
